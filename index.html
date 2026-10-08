@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário de 2 Anos do Benício - Homem-Aranha Baby</title>
+    <style>
+        :root {
+            --spider-red: #e53935;
+            --spider-blue: #1e88e5;
+            --spider-dark: #1a202c;
+            --bg-color: #f0f4f8;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #bbdefb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(30, 136, 229, 0.15);
+            overflow: hidden;
+            border: 3px solid var(--spider-blue);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--spider-red), var(--spider-blue));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 4px solid #ffeb3b;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            margin: 8px 0 0 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffeb3b;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Estilo das Abas */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #e3f2fd;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 10px;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #1565c0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            background-color: #bbdefb;
+            color: var(--spider-red);
+        }
+
+        .tab-btn.active {
+            background-color: var(--card-bg);
+            color: var(--spider-red);
+            border-bottom: 4px solid var(--spider-red);
+        }
+
+        /* Conteúdo das Abas */
+        .tab-content {
+            display: none;
+            padding: 25px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--spider-red);
+            font-size: 1.3rem;
+            margin-top: 0;
+            border-bottom: 2px dashed var(--spider-blue);
+            padding-bottom: 8px;
+        }
+
+        /* Estilo de Checklist Interativo */
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: var(--spider-red);
+            flex-shrink: 0;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + span {
+            text-decoration: line-through;
+            color: #a0aec0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .section-box {
+            background: #f8fafc;
+            border-left: 5px solid var(--spider-red);
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .section-box h3 {
+            margin: 0 0 12px 0;
+            font-size: 1.05rem;
+            color: var(--spider-blue);
+        }
+
+        @media (max-width: 600px) {
+            .tab-btn {
+                flex: 1 1 50%;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🕷️ Aniversário de 2 Anos do Benício 🕸️</h1>
+        <p>Tema: Homem-Aranha Baby</p>
+    </header>
+
+    <!-- Botões das Abas -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'cardapio')">Cardápio</button>
+        <button class="tab-btn" onclick="openTab(event, 'compras')">Compras</button>
+        <button class="tab-btn" onclick="openTab(event, 'utensilios')">Utensílios</button>
+        <button class="tab-btn" onclick="openTab(event, 'sabado')">Sábado</button>
+        <button class="tab-btn" onclick="openTab(event, 'domingo')">Domingo</button>
+    </div>
+
+    <!-- Aba 1: Cardápio -->
+    <div id="cardapio" class="tab-content active">
+        <h2>Cardápio do Dia</h2>
+        <ul>
+            <li><strong>Prato Principal:</strong> Creme de galinha tradicional (com batata palha à parte).</li>
+            <li><strong>Acompanhamentos:</strong>
+                <ul>
+                    <li>Arroz parboilizado (temperado com alho, cebola e sal).</li>
+                    <li>Farofa crocante (calabresa moída, cebola, alho, manteiga e farinha já garantida).</li>
+                    <li>Salada verde (alface, tomate normal, pepino e cebola ralada).</li>
+                </ul>
+            </li>
+            <li><strong>Sobremesas:</strong>
+                <ul>
+                    <li>Salada de frutas (manga, melão, goiaba, banana, maçã e suco de laranja natural).</li>
+                    <li>Brigadeiro (pronto para enrolar, com forminhas, confeitos e manteiga).</li>
+                </ul>
+            </li>
+            <li><strong>Bebidas:</strong>
+                <ul>
+                    <li>2 fardos de refrigerante Pitchula.</li>
+                    <li>Polpas de fruta (Goiaba e Manga).</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Aba 2: Compras (Com Checkbox) -->
+    <div id="compras" class="tab-content">
+        <h2>Checklist de Compras (Clique para marcar)</h2>
+        
+        <div class="section-box">
+            <h3>🛒 Comprar na Feira (Domingo de Manhã)</h3>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Alface:</strong> para a salada verde</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Tomate normal:</strong> para a salada verde</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Pepino:</strong> para a salada verde</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Cebola:</strong> para a salada verde</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Manga:</strong> para a salada de frutas</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Melão:</strong> para a salada de frutas</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Goiaba:</strong> para a salada de frutas</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Banana:</strong> para a salada de frutas</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Maçã:</strong> para a salada de frutas</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Laranjas:</strong> para espremer o suco da salada de frutas</span></label>
+        </div>
+
+        <div class="section-box">
+            <h3>🛒 Comprar no Supermercado (Prévia / Sábado)</h3>
+            
+            <p style="font-weight: bold; color: var(--spider-red); margin-bottom: 8px;">Creme de Galinha:</p>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Peito de frango:</strong> 2 kg</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Cebolas e Alho:</strong> quantidade para temperos</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caldo Knor galinha:</strong> 1 caixinha</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Extrato de tomate:</strong> 2 a 3 xícaras</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Milho verde em lata:</strong> 3 latas</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Amido de milho:</strong> 1 pacote</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Creme de leite:</strong> 4 caixinhas (200 ml cada)</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Manteiga:</strong> para refogar e preparar os pratos</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Cheiro-verde (salsa e cebolinha):</strong> 1 maço</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Batata palha:</strong> 1 kg</span></label>
+
+            <p style="font-weight: bold; color: var(--spider-red); margin: 15px 0 8px 0;">Arroz Parboilizado:</p>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Arroz parboilizado:</strong> 2 kg</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Óleo:</strong> para o preparo</span></label>
+
+            <p style="font-weight: bold; color: var(--spider-red); margin: 15px 0 8px 0;">Farofa & Brigadeiro:</p>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Cebola e Alho:</strong> para a farofa</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Manteiga extra:</strong> para untar as mãos na hora de enrolar os brigadeiros</span></label>
+
+            <p style="font-weight: bold; color: var(--spider-red); margin: 15px 0 8px 0;">Bebidas:</p>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Refrigerante Pitchula:</strong> 2 fardos</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Polpas de fruta (Goiaba e Manga):</strong> 1 pacote de cada</span></label>
+        </div>
+    </div>
+
+    <!-- Aba 3: Utensílios (Com Checkbox) -->
+    <div id="utensilios" class="tab-content">
+        <h2>Utensílios (Dona Marta e Érica)</h2>
+        <p><em>Dica de super-herói: Separar e lavar todos os itens no sábado à tarde/noite! Clique para marcar conforme separar.</em></p>
+        
+        <div class="section-box">
+            <label class="checklist-item"><input type="checkbox"><span>Panela de pressão grande</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Panela grande</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Caçarola grande</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Tábua de corte (da Dona Marta)</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Espremedor de laranja (Dona Marta)</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Batedeira (Dona Marta)</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Refratário (Dona Marta)</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Suporte para bolo (acrílico ou cristal)</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Bandejas para comidas expostas na mesa</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Suqueira grande</span></label>
+        </div>
+    </div>
+
+    <!-- Aba 4: Sábado (Com Checkbox) -->
+    <div id="sabado" class="tab-content">
+        <h2>O que cada uma vai fazer no Sábado</h2>
+        
+        <div class="section-box">
+            <h3>👩‍🍳 Jayna</h3>
+            <label class="checklist-item"><input type="checkbox"><span>Ir ao mercado garantir os ingredientes do creme de galinha, farofa, bebidas e brigadeiro.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Cozinhar, desfiar e preparar o <strong>creme de galinha</strong>. Deixar pronto, esperar esfriar, tampar bem e guardar na geladeira.</span></label>
+        </div>
+
+        <div class="section-box">
+            <h3>👩‍🍳 Dona Marta</h3>
+            <label class="checklist-item"><input type="checkbox"><span>Fazer a <strong>farofa crocante</strong> com calabresa moida, cebola, alho, manteiga e farinha. Guardar em recipiente bem fechado.</span></label>
+        </div>
+
+        <div class="section-box">
+            <h3>👩‍🍳 Raíssa</h3>
+            <label class="checklist-item"><input type="checkbox"><span>Separar e lavar todos os utensílios necessários (tarde/noite).</span></label>
+            <label class="checklist-item"><input type="checkbox"><span>Adiantar e enrolar uma parte dos brigadeiros.</span></label>
+        </div>
+    </div>
+
+    <!-- Aba 5: Domingo (Com Checkbox) -->
+    <div id="domingo" class="tab-content">
+        <h2>O que cada um vai fazer no Domingo</h2>
+        
+        <div class="section-box">
+            <h3>🛒 Compras da Feira (Manhã)</h3>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Dona Marta:</strong> Comprar os itens da salada verde.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Jayna:</strong> Comprar as frutas para a salada de frutas (e picar após retornar).</span></label>
+        </div>
+
+        <div class="section-box">
+            <h3>🍳 Cozinha & Preparativos</h3>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Geral na cozinha:</strong> Auxiliar com os preparativos finais, esquentar comidas, empratar!</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Raíssa:</strong> Preparar o arroz parboilizado e terminar de enrolar o restante dos brigadeiros, se necessário.</span></label>			
+			<label class="checklist-item"><input type="checkbox"><span><strong>Jayna:</strong> Montar a salada de frutas (Aquecer muito bem o creme de galinha perto do almoço).</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Marta:</strong> Montar a salada verde e colocar os alimentos nas vasilhas para colocar na mesa. </span></label>
+        </div>
+
+        <div class="section-box">
+            <h3>🎉 Missão Especial: Decoração & Apoio</h3>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Encher e pendurar os balões.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Ajeitar a mesa no lugar.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Colocar o pano da parede e o pano da mesa.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Ajeitar as cadeiras.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Organizar o espaço para a festa (varrendo).</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Receber os dois bolos.</span></label>
+            <label class="checklist-item"><input type="checkbox"><span><strong>Caio e Jean:</strong> Cuidar do aniversariante Benício! 🕷️💙❤️</span></label>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        let i, tabContent, tabBtns;
+
+        // Esconde todos os conteúdos
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active");
+        }
+
+        // Remove a classe 'active' de todos os botões
+        tabBtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove("active");
+        }
+
+        // Mostra a aba atual e adiciona a classe 'active' ao botão clicado
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
